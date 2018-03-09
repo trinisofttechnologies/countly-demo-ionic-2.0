@@ -82,4 +82,6 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^1.1.16" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="ly.count.cordova" spec="https://github.com/Countly/countly-sdk-js.git" />
+    <engine name="android" spec="~7.0.0" />
+    <allow-navigation href="http://192.168.1.118:8100" />
 </widget>

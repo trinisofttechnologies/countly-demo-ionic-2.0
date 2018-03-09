@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Countly } from './ionic.countly';
 
+declare var PushNotification;
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
   providers: [Countly]
 })
-declare var PushNotification;
 
 export class HomePage {
 
@@ -73,7 +74,8 @@ export class HomePage {
         // example for event with segment
         var events = {
             "eventName": "event_segment",
-            "eventCount": 1
+            "eventCount": 1,
+            "segments": {}
         };
         events.segments = {
             "Country": "Turkey",
@@ -86,7 +88,9 @@ export class HomePage {
         var events = {
             "eventName": "event_segment_sum",
             "eventCount": 1,
-            "eventSum": "0.99"
+            "eventSum": "0.99",
+            "segments": {}
+
         };
         events.segments = {
             "Country": "Turkey",
@@ -96,7 +100,17 @@ export class HomePage {
     }
     setUserData() {
         // example for setUserData
-        var options = {};
+        var options = {
+            "name": "",
+            "username": "",
+            "email": "",
+            "org": "",
+            "phone": "",
+            "picture": "",
+            "picturePath": "",
+            "gender": "",
+            "byear": 0
+        };
         options.name = "Trinisoft Technologies";
         options.username = "trinisofttechnologies";
         options.email = "trinisofttechnologies@gmail.com";
@@ -214,7 +228,8 @@ export class HomePage {
         setTimeout(function(){
 
             var events = {
-              "eventName": "Timed Event With Segment"
+              "eventName": "Timed Event With Segment",
+                "segments": {}
             };
             events.segments = {
               "Country": "Turkey",
@@ -229,7 +244,8 @@ export class HomePage {
             var events = {
               "eventName": "Timed Event With Segment, Sum and Count",
               "eventCount": 1,
-              "eventSum": "0.99"
+              "eventSum": "0.99",
+              "segments": {}
             };
             events.segments = {
               "Country": "Turkey",

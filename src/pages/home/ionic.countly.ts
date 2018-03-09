@@ -7,7 +7,7 @@ export class Countly {
     projectId: String;
     messageMode: String;
 
-    init(serverUrl: String, appKey: String) {
+  init(serverUrl: String, appKey: String) {
     this.serverUrl = serverUrl;
     this.appKey = appKey;
     cordova.exec(this.onSuccess,this.onError,"CountlyCordova","init",[serverUrl,appKey]);
@@ -16,7 +16,6 @@ export class Countly {
   initMessaging(options: any) {
     this.projectId = options.projectId;
     this.messageMode = options.messageMode;
-    // this.Push.onRegisterPushNotification();
     let args = [];
     args.push(options.registrationId || "");
     args.push(options.messageMode || "0");
@@ -169,7 +168,7 @@ export class Countly {
   incrementBy(keyName: String, keyIncrement: Number){
     cordova.exec(this.onSuccess,this.onError,"CountlyCordova","userData_incrementBy",[keyName.toString() || "", keyIncrement.toString() || ""]);
   }
-  multiply(keyName: String, multiplyValue: String){
+  multiply(keyName: String, multiplyValue: Number){
     cordova.exec(this.onSuccess,this.onError,"CountlyCordova","userData_multiply",[keyName.toString() || "", multiplyValue.toString() || ""]);
   }
   saveMax(keyName: String, saveMax: Number){
@@ -178,7 +177,7 @@ export class Countly {
   saveMin(keyName: String, saveMin: Number){
     cordova.exec(this.onSuccess,this.onError,"CountlyCordova","userData_saveMin",[keyName.toString() || "", saveMin.toString() || ""]);
   }
-  setOnce(keyName: String, setOnce: String){
+  setOnce(keyName: String, setOnce: Number){
     cordova.exec(this.onSuccess,this.onError,"CountlyCordova","userData_setOnce",[keyName.toString() || "", setOnce.toString() || ""]);
   }
 
