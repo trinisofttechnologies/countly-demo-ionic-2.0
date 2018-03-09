@@ -1,4 +1,5 @@
-declare var cordova;
+declare var cordova: any;
+declare var window: any;
 
 export class Countly {
 
@@ -98,7 +99,7 @@ export class Countly {
   }
   // // countly dummy success and error event
   onSuccess(result: any){
-    alert(result);
+    // alert(result);
   }
   onError(error: any){
      // alert("error");

@@ -16,9 +16,9 @@ export class HomePage {
   }
 
     init() {
-        document.addEventListener("deviceready", function() {
+        // document.addEventListener("deviceready", function() {
             this.countly.init("https://try.count.ly","0e8a00e8c01395a0af8be0e55da05a404bb23c3e");
-        }, false);
+        // }, false);
     };
 
     test() {
